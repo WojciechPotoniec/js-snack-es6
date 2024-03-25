@@ -112,8 +112,8 @@ Stampare in console la bici con peso minore utilizzando destructuring e template
  const cycle  =[
    {bikename: 'Rocky Mountain', weight: 1500},
    {bikename: 'Byte', weight: 2500},
-   {bikename: 'MTB', weight: 1200},
-   {bikename: 'Alpinestar', weight: 2400},
+   {bikename: 'MTB', weight: 2200},
+   {bikename: 'Alpinestar', weight: 1400},
    {bikename: 'Atala', weight: 3000},
  ];
 console.log(cycle);
@@ -128,7 +128,7 @@ for (let i = 1; i < cycle.length; i++) {
 
 // Stampare in console la bici con peso minore utilizzando destructuring e template literal
 let { bikename, weight } = lightweightcycle;
-console.log(`La bici con peso minore è ${bikename} con un peso di ${weight} kg.`);
+console.log(`La bici con peso minore è ${bikename} con un peso di ${weight}g.`);
 
 
 /*SNACK 4
