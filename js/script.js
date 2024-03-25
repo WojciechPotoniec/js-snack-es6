@@ -20,7 +20,7 @@ const invitedName = [
   "Amal Clooney",
   "Fedez",
   "Amadeus",
-  "Fiorello",
+  "Fiorello"
 ];
 
 const guestList = invitedName.map((member, i) => {
@@ -102,3 +102,96 @@ console.log(gradeList);
 
 const gradeidList = studentsList.filter((student) => student.grades > 70 && student.id > 120);
 console.log(gradeidList);
+
+/*SNACK 3
+Creare un array di oggetti:
+Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
+Stampare in console la bici con peso minore utilizzando destructuring e template literal
+*/
+
+const cycle  =[
+  {
+    name: 'MTB',
+    weight: 1200
+  },
+  {
+    name: 'Rocky Mountain',
+    weight: 1500
+  },
+  {
+    name: 'Byte',
+    weight: 2500
+  },
+  {
+    name: 'Alpinestar',
+    weight: 2400
+  },
+  {
+    name: 'Atala',
+    weight: 3000
+  },
+];
+
+const {name, weight} = cycle;
+console.log(cycle);
+
+
+/*SNACK 4
+Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
+Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli subiti.
+Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+*/
+
+/*BONUS
+Stampare in pagina oltre che in console!
+*/
+
+const soccerTeam = [
+  {
+    name: 'Milan',
+    points: 0,
+    fouls: 0
+  },
+  {
+    name: 'Roma',
+    points: 0,
+    fouls: 0
+  }, 
+  {
+    name: 'Inter',
+    points: 0,
+    fouls: 0  
+  },
+  {
+    name: 'Napoli',
+    points: 0,
+    fouls: 0
+  },
+  {
+    name: 'Juventus',
+    points: 0,
+    fouls: 0
+  }
+]
+
+// Generare numeri random al posto degli 0 nelle proprietà: points e fouls
+for (let i = 0; i < soccerTeam.length; i++) {
+  soccerTeam[i].points = getRndInteger(1, 100);
+  soccerTeam[i].fouls = getRndInteger(1, 100);
+}
+
+// Usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti
+let newArray = soccerTeam.map(({ name, fouls }) => ({ name, fouls}));
+
+// Stampiamo tutto in console
+console.log(newArray);
+
+// Stampiamo tutto in pagina 
+let message = document.getElementById('message')
+
+for (let i = 0; i < newArray.length; i++) {
+  message.innerHTML += `
+  <h2>Nome: ${newArray[i].name}, Falli Subiti: ${newArray[i].fouls}</h2>
+  `;
+}
