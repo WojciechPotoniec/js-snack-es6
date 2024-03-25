@@ -109,31 +109,27 @@ Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e pe
 Stampare in console la bici con peso minore utilizzando destructuring e template literal
 */
 
-const cycle  =[
-  {
-    name: 'MTB',
-    weight: 1200
-  },
-  {
-    name: 'Rocky Mountain',
-    weight: 1500
-  },
-  {
-    name: 'Byte',
-    weight: 2500
-  },
-  {
-    name: 'Alpinestar',
-    weight: 2400
-  },
-  {
-    name: 'Atala',
-    weight: 3000
-  },
-];
+ const cycle  =[
+   {name: 'Rocky Mountain', weight: 1500},
+   {name: 'Byte', weight: 2500},
+   {name: 'MTB', weight: 1200},
+   {name: 'Alpinestar', weight: 2400},
+   {name: 'Atala', weight: 3000},
+ ];
 
-const {name, weight} = cycle;
 console.log(cycle);
+
+// Trovare la bici con peso minore
+let lightweightcycle = cycle[0];
+for (let i = 1; i < cycle.length; i++) {
+  if (cycle[i].weight < lightweightcycle.weight) {
+    lightweightcycle = cycle[i];
+  }
+}
+
+// Stampare in console la bici con peso minore utilizzando destructuring e template literal
+let { name, weight } = lightweightcycle;
+console.log(`La bici con peso minore è ${name} con un peso di ${weight} kg.`);
 
 
 /*SNACK 4
