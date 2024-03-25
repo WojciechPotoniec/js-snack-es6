@@ -185,8 +185,8 @@ console.log(newArray);
 // Stampiamo tutto in pagina 
 let message = document.getElementById('message')
 
-for (let i = 0; i < newArray.length; i++) {
+for (const value of newArray) {
   message.innerHTML += `
-  <h2>Nome: ${newArray[i].name}, Falli Subiti: ${newArray[i].fouls}</h2>
+  <h2>Nome: ${value.name}, Falli Subiti: ${value.fouls}</h2>
   `;
 }
